@@ -1,0 +1,6 @@
+streamlit
+pandas
+numpy
+spacy
+scikit-learn
+rapidfuzz
