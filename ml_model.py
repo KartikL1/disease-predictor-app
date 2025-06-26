@@ -25,11 +25,12 @@ symptom_corpus = [s.replace('_', ' ') for s in all_symptoms]
 symptom_original_map = {s.replace('_', ' '): s for s in all_symptoms}
 
 try:
-    nlp = spacy.load('en_core_web_md')
+    nlp = spacy.load("en_core_web_md")
 except:
-    import spacy.cli
-    spacy.cli.download('en_core_web_md')
-    nlp = spacy.load('en_core_web_md')
+    import subprocess
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_md"])
+    nlp = spacy.load("en_core_web_md")
+
 
 symptom_definitions = {s: s.replace('_', ' ') for s in all_symptoms}
 symptom_vectors = {s: nlp(d).vector for s, d in symptom_definitions.items() if nlp(d).vector_norm}
