@@ -9,10 +9,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 
 # Load data
-df1 = pd.read_csv('data/dataset.csv')
-df2 = pd.read_csv('data/symptom_precaution.csv')
-df3 = pd.read_csv('data/symptom_Description.csv')
-df4 = pd.read_csv('data/Symptom-severity.csv')
+df1 = pd.read_csv('dataset.csv')
+df2 = pd.read_csv('symptom_precaution.csv')
+df3 = pd.read_csv('symptom_Description.csv')
+df4 = pd.read_csv('Symptom-severity.csv')
 
 df4['Symptom'] = df4['Symptom'].str.lower().str.strip().str.replace(' ', '_')
 symptom_severity = dict(zip(df4['Symptom'], df4['weight']))
