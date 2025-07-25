@@ -1,6 +1,6 @@
 streamlit
 pandas
 numpy
-spacy==3.5.0
+spacy
 scikit-learn
 rapidfuzz
